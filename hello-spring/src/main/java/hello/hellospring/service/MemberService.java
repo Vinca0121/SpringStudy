@@ -25,6 +25,10 @@ public class MemberService {
     // 멤버를 등록하는 함수
     public Long join(Member member){
         // 중복 회원 검증(이름)
+
+//        long start =  System.currentTimeMillis();
+
+
         validateDuplicateMember(member);
         memberRepository.save(member);
         return member.getId();

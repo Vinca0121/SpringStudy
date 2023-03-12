@@ -15,14 +15,13 @@ import java.util.logging.Logger;
 
 
 @Controller
-@Slf4j
 public class MemberController {
 
     private final MemberService memberservice;
 
     // DI
     @Autowired
-    private MemberController(MemberService memberService){
+    public MemberController(MemberService memberService){
         this.memberservice = memberService;
     }
 
@@ -36,7 +35,7 @@ public class MemberController {
     public String create(MemberForm form){
         Member member = new Member();
         System.out.println(form.getName() + "<<form에 저장된 getName 값");
-        log.info(form.getName(), "<<form에 저장된 getName 값");
+
         member.setName(form.getName());
         memberservice.join(member);
 
